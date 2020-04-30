@@ -7,8 +7,7 @@ def initialize(title)
 end
 
 def add_backer(backer)
-  project = project.new
-  project.title.new
-  @backers << self
-end
+    @backers << backer
+    backer.back_project(self) unless backer.backed_projects.include?(self)
+  end
 end
